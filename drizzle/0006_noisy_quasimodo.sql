@@ -1,0 +1,1 @@
+ALTER TABLE "settings" DROP COLUMN "groww_access_token";

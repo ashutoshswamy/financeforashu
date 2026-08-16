@@ -1,0 +1,1 @@
+ALTER TABLE "settings" ADD COLUMN "groww_access_token" text;
