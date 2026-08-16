@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // firebase-admin's transitive deps (jwks-rsa -> jose) mix ESM/CJS in a way
+  // Turbopack fails to bundle correctly; keep the whole chain as native requires.
+  serverExternalPackages: ["firebase-admin", "jwks-rsa", "jose", "google-auth-library"],
   async headers() {
     return [
       {
